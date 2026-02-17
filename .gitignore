@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build output
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / editor
+.idea/
+.vscode/
+*.code-workspace
+.nova/
+
+# Debug logs
+npm-debug.log*
+debug.log
+
+# Optional: local environment
+.env

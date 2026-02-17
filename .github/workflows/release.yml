@@ -1,0 +1,67 @@
+name: Build Plugin Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get the version
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build assets
+        run: npm run build
+
+      - name: Create build directory
+        run: mkdir -p build-release/weave-rybbit-analytics
+
+      - name: Copy plugin files to build directory
+        run: |
+          rsync -av \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='build-release' \
+            --exclude='node_modules' \
+            --exclude='src' \
+            --exclude='.gitignore' \
+            --exclude='package.json' \
+            --exclude='package-lock.json' \
+            --exclude='webpack.scripts.config.js' \
+            --exclude='blueprint.json' \
+            --exclude='CHANGELOG.md' \
+            --exclude='CLAUDE.md' \
+            --exclude='nginx-proxy-config.md' \
+            --exclude='weave-rybbit-analytics-plan.md' \
+            --exclude='.DS_Store' \
+            --exclude='.nova' \
+            . build-release/weave-rybbit-analytics/
+
+      - name: Create zip file
+        run: |
+          cd build-release
+          zip -r weave-rybbit-analytics-${{ env.VERSION }}.zip weave-rybbit-analytics
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build-release/weave-rybbit-analytics-${{ env.VERSION }}.zip
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
