@@ -1,0 +1,16 @@
+{
+	"name": "weave-rybbit-analytics",
+	"version": "1.0.0",
+	"description": "Lightweight Rybbit Analytics tracking for WordPress with proxy support and Gravity Forms event tracking.",
+	"author": "Weave Digital Studio",
+	"license": "GPL-2.0-or-later",
+	"scripts": {
+		"build": "wp-scripts build --config webpack.scripts.config.js",
+		"start": "wp-scripts start --config webpack.scripts.config.js",
+		"lint": "npm run lint:js",
+		"lint:js": "wp-scripts lint-js src/"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^31.4.0"
+	}
+}
