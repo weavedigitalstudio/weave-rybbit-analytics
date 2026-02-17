@@ -43,7 +43,7 @@ Navigate to **Settings -> Rybbit Analytics** in the WordPress admin.
 |---------|---------|-------------|
 | Disable for Admins | On | Skip tracking for administrators |
 | Disable for Logged-in Users | Off | Skip tracking for all logged-in users |
-| Script Loading | `async` | Loading strategy: `async`, `defer`, or `async defer` |
+| Script Loading | `defer` | Loading strategy: `async`, `defer`, or `async defer` |
 
 ### Gravity Forms
 
