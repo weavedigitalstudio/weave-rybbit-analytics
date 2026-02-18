@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1] - 2026-02-19
+
+### Added
+- Settings link on the Plugins page for quick access to plugin settings.
+
 ## [1.0.0] - 2026-02-17
 
 ### Added
