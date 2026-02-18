@@ -90,7 +90,7 @@ export default function AboutTab() {
 					</p>
 					<p>
 						{ __(
-							'To use proxy mode, you need to configure Nginx on your server to forward requests from the proxy path (e.g. /analytics/) to app.rybbit.io/api/. See the companion Nginx configuration documentation in the plugin repository.',
+							'To use proxy mode, you need to configure Nginx on your server to forward requests from the proxy path (e.g. /ry/) to app.rybbit.io/api/. See the companion Nginx configuration documentation in the plugin repository.',
 							'weave-rybbit-analytics'
 						) }
 					</p>
