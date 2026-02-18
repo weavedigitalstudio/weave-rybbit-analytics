@@ -40,3 +40,14 @@ $weave_rybbit_settings = SettingsPage\get_settings();
 if ( ! empty( $weave_rybbit_settings['gf_enable'] ) ) {
 	require_once WEAVE_RYBBIT_ANALYTICS_DIR . 'inc/gravity-forms.php';
 }
+
+// Add Settings link on the Plugins page.
+add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), function ( array $links ): array {
+	$settings_link = sprintf(
+		'<a href="%s">%s</a>',
+		esc_url( admin_url( 'options-general.php?page=weave-rybbit-analytics' ) ),
+		esc_html__( 'Settings', 'weave-rybbit-analytics' )
+	);
+	array_unshift( $links, $settings_link );
+	return $links;
+} );
