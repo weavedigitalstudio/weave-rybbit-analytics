@@ -3,7 +3,7 @@
  * Plugin Name:       Weave Rybbit Analytics
  * Plugin URI:        https://github.com/weavedigitalstudio/weave-rybbit-analytics
  * Description:       Lightweight Rybbit Analytics tracking for WordPress with proxy support and Gravity Forms event tracking.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Requires at least: 6.2
  * Requires PHP:      8.1
  * Author:            Weave Digital Studio
@@ -24,7 +24,7 @@ namespace WeaveRybbitAnalytics;
 defined( 'ABSPATH' ) || exit;
 
 // Plugin constants.
-define( 'WEAVE_RYBBIT_ANALYTICS_VERSION', '1.0.1' );
+define( 'WEAVE_RYBBIT_ANALYTICS_VERSION', '1.0.2' );
 define( 'WEAVE_RYBBIT_ANALYTICS_FILE', __FILE__ );
 define( 'WEAVE_RYBBIT_ANALYTICS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WEAVE_RYBBIT_ANALYTICS_URL', plugin_dir_url( __FILE__ ) );
