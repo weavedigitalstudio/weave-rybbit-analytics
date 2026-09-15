@@ -72,7 +72,7 @@ function output_gf_tracking_script(): void {
 	}
 	$form_titles_js = wp_json_encode( (object) $form_titles_map );
 
-	// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped — all values are escaped above.
+	// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- all values are escaped above.
 	?>
 <script>
 (function(){
